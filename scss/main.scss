@@ -20,11 +20,9 @@ Text Domain: ohhoney
 @import "partials/tools/mixins";
 //@import "partials/tools/mediaqueries";
 
-// @import "partials/structure/structure.blocks";
+@import "partials/structure/structure.blocks";
+@import "partials/elements.all";
 
 
-// @import "partials/elements.all";
-
-
-// @import "partials/components.all";
+@import "partials/components.all";
 //@import "partials/elements.all";

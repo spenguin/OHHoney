@@ -13,3 +13,13 @@ $formRadius: 0.5rem;
 
 $aspectRatioPercentage: 56.25%;
 
+/* Max width wrapper */
+.max-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+  
+.hidden {
+    display: none;
+}
+

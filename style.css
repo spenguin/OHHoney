@@ -973,11 +973,21 @@ textarea {
   font-style: normal;
 }
 body {
-  font-family: "BeVietmanPro", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /** Variables */
 /** Breakpoints */
+/* Max width wrapper */
+.max-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+}
+
 /** Mixins */
 /**
 Function to generate an RGB colour backgrund with a provided opacity
@@ -998,5 +1008,79 @@ param: percentage filtered
 Note: Yes, this should probably take a parameter of _which_ filter to apply. Maybe next time
 http://shouldiprefix.com/#filters
 */
+/** Structure styling */
+body {
+  background: #0D0D0D;
+  color: #fff;
+}
+
+/** Elements aggregator */
+/** Text styling */
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/** Component styles aggregator */
+/** Styles for header */
+header {
+  background-color: #262627;
+  height: 4rem;
+}
+
+.site-header__navigation {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.site-title {
+  background: url("../../../wp-content/uploads/2022/10/logo.png") no-repeat;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  text-indent: -999px;
+}
+
+.site-branding {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 150px;
+  height: 150px;
+}
+
+.main-navigation {
+  display: flex;
+  width: auto;
+}
+
+/** Navigation styles */
+.site-header__navigation {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.75rem;
+}
+
+.menu-main-menu-container {
+  padding-right: 1.5rem;
+}
+
+.menu-item {
+  margin-left: 1.5rem;
+}
+.menu-item a {
+  font-variant: small-caps;
+  font-size: 1rem;
+}
+.menu-item a:hover {
+  text-decoration: underline;
+  color: #CEE0A5;
+}
+.menu-item.current_page_item a {
+  color: #A6CA44;
+  text-decoration: underline;
+}
 
 /*# sourceMappingURL=style.css.map */
