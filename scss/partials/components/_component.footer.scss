@@ -1,0 +1,13 @@
+/** Footer styles */
+footer {
+    background-color: $OHGrey;
+
+    color: $OHWhite;
+    .footer-wrapper {
+        display: flex;
+        justify-content: space-between;
+        div {
+            width: 32%;
+        }
+    }
+}

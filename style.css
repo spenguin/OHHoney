@@ -1083,4 +1083,17 @@ header {
   text-decoration: underline;
 }
 
+/** Footer styles */
+footer {
+  background-color: #262627;
+  color: #fff;
+}
+footer .footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer-wrapper div {
+  width: 32%;
+}
+
 /*# sourceMappingURL=style.css.map */
