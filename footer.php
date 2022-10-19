@@ -12,15 +12,16 @@
 ?>
 <footer>
 	<div class="footer-wrapper max-wrapper">
-		<div class="footer-wrapper__copyright">
-			<p>Copyright</p>
+		<div class="footer-wrapper__section footer-wrapper__copyright">
+			<?php dynamic_sidebar( 'footer_area_one' ); ?>
 		</div>
-		<div class="footer-wrapper__instagram">
-			<?php dynamic_sidebar( 'footer-middle' ); ?>
+		<div class="footer-wrapper__section footer-wrapper__instagram">
 			<p>Instagram</p>
+			<?php dynamic_sidebar( 'footer_area_two' ); ?>
 		</div>
-		<div class="footer-wrapper__signup">
-			<p>MailChimp</p>
+		<div class="footer-wrapper__section footer-wrapper__signup">
+			<p>Signup</p>
+			<?php dynamic_sidebar( 'footer_area_three' ); ?>
 		</div>
 	</div>
 </footer>

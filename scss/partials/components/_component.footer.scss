@@ -6,7 +6,7 @@ footer {
     .footer-wrapper {
         display: flex;
         justify-content: space-between;
-        div {
+        .footer-wrapper__section  {
             width: 32%;
         }
     }

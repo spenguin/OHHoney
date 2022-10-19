@@ -1092,7 +1092,7 @@ footer .footer-wrapper {
   display: flex;
   justify-content: space-between;
 }
-footer .footer-wrapper div {
+footer .footer-wrapper .footer-wrapper__section {
   width: 32%;
 }
 
