@@ -8,6 +8,8 @@
  *
  * @package OhHoney!
  */
+$page_class = ''; //get_page_class_by_title(get_the_title());
+
 
 ?>
 <!doctype html>
@@ -16,42 +18,15 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link rel="stylesheet" href="./wp-content/themes/ohhoney/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="./wp-content/themes/OHHoney/style.css">
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'ohhoney' ); ?></a>
-
-	<header id="masthead" class="site-header">
-
-		<div class="max-wrapper site-header__navigation">
-			<div class="site-branding">
-				<?php
-					if ( is_front_page() && is_home() ) :
-						?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<?php
-					else :
-						?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-						<?php
-					endif;
-				?>
-			</div>			
-			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ohhoney' ); ?></button>
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'main-menu',
-					)
-				);
-				?>
-				<?php get_search_form(); ?>
-			</nav><!-- #site-navigation -->			
-		</div>
-	</header><!-- #masthead -->
+<body <?php body_class($page_class); ?>>
+	<header>
+		<?php get_template_part( 'template-parts/header-content' ); ?>
+		<?php get_template_part( 'template-parts/header-navigation' ); ?>
+		<?php get_template_part( 'template-parts/header-social-media' ); ?>
+    </header>
+    <div class="container">

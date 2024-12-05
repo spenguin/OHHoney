@@ -18,9 +18,11 @@ Text Domain: ohhoney
 @import "partials/variables";
 
 @import "partials/tools/mixins";
-//@import "partials/tools/mediaqueries";
+// //@import "partials/tools/mediaqueries";
 
 @import "partials/structure/structure.blocks";
+@import "partials/structure/structure.wrappers";
+@import "partials/structure/structure.sections";
 @import "partials/elements.all";
 
 

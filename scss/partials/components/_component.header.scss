@@ -1,28 +1,30 @@
 /** Styles for header */
 header {
     background-color: $OHGrey;
-    height: 4rem;
+    padding-bottom: 0.5rem;
 }
 
-.site-header__navigation {
+.header-bar {
+    background-color: $OHGreen;
+    color: $OHWhite;
+    a {
+        color: $OHWhite;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        padding: 0.85rem 0;
+        &:hover {
+            color: $OHLightGreen;
+        }
+    }
+}
+
+.header-icon-container {
     display: flex;
-    justify-content: flex-end;
-}
-.site-title {
-    background: url( '../../../wp-content/uploads/2022/10/logo.png') no-repeat;
-    width: 100%;
-    height: 100%;
-    background-size: contain;
-    text-indent: -999px;
-}
-.site-branding {
-    position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
-    width: 150px;
-    height: 150px;    
-}
-.main-navigation {
-    display: flex;
-    width: auto;
+    justify-content: end;
+    padding-right: 0.15rem;
+    a {
+        margin-left: 0.85rem;
+        color: $OHWhite;
+    }
 }
