@@ -10,41 +10,31 @@
  */
 
 ?>
-<footer>
-	<div class="footer-wrapper max-wrapper">
-		<div class="footer-wrapper__section footer-wrapper__copyright">
-			<?php dynamic_sidebar( 'footer_area_one' ); ?>
-		</div>
-		<div class="footer-wrapper__section footer-wrapper__instagram">
-			<p>Instagram</p>
-			<?php dynamic_sidebar( 'footer_area_two' ); ?>
-		</div>
-		<div class="footer-wrapper__section footer-wrapper__signup">
-			<p>Signup</p>
-			<?php dynamic_sidebar( 'footer_area_three' ); ?>
-		</div>
-	</div>
-</footer>
+	<footer>
+		<h1>Occasionally Honey</h1>
+		<div class="footer--social-media">
 
-<!-- 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ohhoney' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'ohhoney' ), 'WordPress' );
-				?>
+			<a href="https://www.facebook.com/occasionallyhoney/" target="_blank">
+				<i class="fab fa-facebook-square text-2xl mx-4 md:text-4xl text-white"></i>
 			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'ohhoney' ), 'ohhoney', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	<!-- </footer>#colophon -->
-</div><!-- #page -->
 
-<?php wp_footer(); ?>
+			<a href="https://www.instagram.com/occasionallyhoney/" target="_blank">
+				<i class="fab fa-instagram text-2xl mx-4 md:text-4xl text-white"></i>
+			</a>
+
+			<a href="#top">
+				<i class="fas fa-home text-2xl mx-4 md:text-4xl text-white"></i>
+			</a>
+
+		</div>
+		<div class="footer--secondary-nav">
+			<a href="/terms-conditions">Terms & Conditions</a>
+			<a href="/privacy-policy">Privacy Policy</a>
+		</div>
+
+	</footer>
+
+	<?php wp_footer(); ?>
 
 </body>
 </html> 
