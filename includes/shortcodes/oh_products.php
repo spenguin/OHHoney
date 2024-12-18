@@ -11,32 +11,20 @@ function oh_products( $atts = [], $content = null, $tag = '' )
         'post_type' => 'product',
         'posts_per_page' => -1,
     ] );
-    $terms = wp_get_object_terms( $posts_in_post_type, 'product_cat', array( 'ids' ) ); 
-    
-    ob_start(); ?>
-        <div class="shop--filter">
-            <div class="shop--filter__menu">
-                
-            </div>
-            <div class="shop--filter__wrapper">
-                <?php
-                    foreach( $terms as $term ): ?>
-                        <div class="shop--filter__category">
-                            <!-- <div class="shop--filter__category-image">
-                                <?php
-                                    $thumb_id = get_term_meta( $term->term_id, 'thumbnail_id', true );
-                                    $term_img = wp_get_attachment_url(  $thumb_id );
-                                ?>
-                                <img src="<?php echo $term_img; ?>" />
-                            </div> -->
-                            <div class="shop--filter__category-name">
-                                <h3><?php echo $term->name; ?></h3>
-                            </div>
-                        </div>
+    $terms = wp_get_object_terms( $posts_in_post_type, 'product_cat', array( 'ids' ) ); //die(var_dump($terms));
 
-                <?php endforeach; ?>
-            </div>
-        </div>
-        <?php
-    return ob_get_clean();
+    $products = get_products(); ?>
+
+    <div id="ProductPage"></div>
+
+
+    <script>
+        // var showId          = '<?php //echo $showId; ?>'; 
+        var terms       = <?php echo json_encode($terms); ?>;
+        var products    = <?php echo json_encode($products); ?>;
+        // console.log('products', products);
+    </script>
+    <script type="text/javascript" src="<?php echo CORE_DIST; ?>productpage.js"></script>
+
+    <?php
 }

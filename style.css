@@ -1163,5 +1163,38 @@ footer .footer--secondary-nav {
 }
 
 /** Shop Filter styles */
+.shop--filter__category-name:hover {
+  background-color: #A6CA44;
+  color: #0D0D0D;
+}
+.shop--filter__category-name.selected {
+  color: #A6CA44;
+}
+
+/** Shop Products styles */
+.shop--products__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.shop--products__item {
+  width: 50%;
+  background-color: #262627;
+  box-sizing: border-box;
+  border: 1px solid #0D0D0D;
+}
+.shop--products__item:hover {
+  background-color: #A6CA44;
+}
+.shop--products__item-image {
+  background-color: #fff;
+  overflow: hidden;
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+}
+.shop--products__item-image img {
+  height: 100%;
+  width: auto;
+}
 
 /*# sourceMappingURL=style.css.map */

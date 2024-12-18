@@ -1,5 +1,16 @@
 /** Shop Filter styles */
 .shop--filter {
+    &__category-name {
+        &:hover {
+            background-color: $OHLightGreen;
+            color: $OHDarkGrey;
+        }
+        &.selected {
+            color: $OHLightGreen;
+        }
+    }
+
+
     // display: flex;
     // flex-direction: row;
     // flex-wrap: wrap;
