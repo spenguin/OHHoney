@@ -4,7 +4,12 @@
 // import nodes
 import React, { useState, useEffect } from "react";
 
-const ProductPageFilter = ({terms}) => {
+const ProductPageFilter = ({terms, setSelectedCategory}) => {
+
+    // set change functions
+    const changeSelectedCategory = (slug) => {
+        setSelectedCategory(slug);
+    }
 
     return (
         <div className="shop--filter">
@@ -15,7 +20,7 @@ const ProductPageFilter = ({terms}) => {
                  <div className="shop--filter__wrapper hide">
                     {terms.map((term) => {
                         return (
-                            <div className="shop--filter__category">
+                            <div className="shop--filter__category" onClick={() => changeSelectedCategory(term.slug)}>
                                 <div className="shop--filter__category-image">
                                 </div>
                                 <div className="shop--filter__category-name">

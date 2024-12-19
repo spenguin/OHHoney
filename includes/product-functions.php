@@ -46,11 +46,12 @@ function organise_terms($ID)
     $o      = [];
     foreach( $terms as $term )
     {
-        $o[] = [
-            'name'      => $term->name,
-            'slug'      => $term->slug,
-            'term_id'   => $term->term_id
-        ];
+        // $o[] = [
+        //     'name'      => $term->name,
+        //     'slug'      => $term->slug,
+        //     'term_id'   => $term->term_id
+        // ];
+        $o[]    = $term->slug;
     }
 
     return $o;
