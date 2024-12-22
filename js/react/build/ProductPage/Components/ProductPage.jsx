@@ -17,9 +17,13 @@ const ProductPage = ({terms, products}) => {
     const [filteredProducts, setFilteredProducts]   = useState(products);
 
     // set change functions
-    useEffect(()=>{
-        // let tmp = 
-        console.table('filteredProducts', filteredProducts);
+    useEffect(()=>{ 
+        if( selectedCategory.length )
+        {
+            setFilteredProducts(
+                products.filter(p => p.category.includes(selectedCategory ))
+            );
+        }
     },[selectedCategory])
 
 
@@ -31,6 +35,7 @@ const ProductPage = ({terms, products}) => {
             />
             <ProductPageList
                 filteredProducts = {filteredProducts}
+                selectedCategory = {selectedCategory}
             />
         </>
     );

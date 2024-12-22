@@ -21,8 +21,8 @@ function oh_products( $atts = [], $content = null, $tag = '' )
     <script>
         // var showId          = '<?php //echo $showId; ?>'; 
         var terms       = <?php echo json_encode($terms); ?>;
-        var products    = <?php echo json_encode($products); ?>;
-        // console.log('products', products);
+        var products    = <?php echo json_encode(array_values($products)); ?>;
+        //console.log('products', products); //console.log('terms', terms);
     </script>
     <script type="text/javascript" src="<?php echo CORE_DIST; ?>productpage.js"></script>
 

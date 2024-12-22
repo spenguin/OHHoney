@@ -28,12 +28,18 @@ function get_products()
         $ID     = get_the_ID();
         $terms  = organise_terms($ID);
 
+        // A hack to get the images [FIX]
+        $imageStr = get_the_post_thumbnail_url();
+        $imageUrl = substr( $imageStr, 0, -4 ) . '-324x324' . substr( $imageStr, strlen($imageStr)-4 );
+
+
         $o[$ID]   = [
             'title'     => get_the_title(),
             'url'       => get_the_permalink(),
-            'image'     => get_the_post_thumbnail_url(),
+            'image'     => $imageUrl,//get_the_post_thumbnail_url(),
             'category'  => $terms
         ];
+
     endwhile; endif; wp_reset_postdata();
 
     return $o;
