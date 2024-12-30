@@ -1197,4 +1197,9 @@ footer .footer--secondary-nav {
   width: auto;
 }
 
+/** Styles for single product page */
+.woocommerce-product-gallery__image {
+  border: 0.1rem black solid;
+}
+
 /*# sourceMappingURL=style.css.map */
