@@ -31,6 +31,7 @@ require_once CORE_INC . 'site-functions.php';
 // require_once CORE_INC . 'calendar-functions.php';
 require_once CORE_INC . 'widgets.php';
 // require_once CORE_INC . 'hooks.php';
+require_once CORE_INC . 'product-functions.php';
 
 
 if( isset( $_GET['nobar'] ) )
