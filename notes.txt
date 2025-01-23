@@ -1,2 +1,0 @@
-cd "J:\Weirdspace\Clients\O\Occasionally Honey\rebuild\wp-content\themes\OHHoney"
-sass --watch scss/main.scss:style.css
