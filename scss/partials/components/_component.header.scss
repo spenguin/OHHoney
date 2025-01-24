@@ -1,0 +1,30 @@
+/** Styles for header */
+header {
+    background-color: $OHGrey;
+    padding-bottom: 0.5rem;
+}
+
+.header-bar {
+    background-color: $OHGreen;
+    color: $OHWhite;
+    a {
+        color: $OHWhite;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        padding: 0.85rem 0;
+        &:hover {
+            color: $OHLightGreen;
+        }
+    }
+}
+
+.header-icon-container {
+    display: flex;
+    justify-content: end;
+    padding-right: 0.15rem;
+    a {
+        margin-left: 0.85rem;
+        color: $OHWhite;
+    }
+}

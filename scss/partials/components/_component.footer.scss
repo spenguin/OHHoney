@@ -1,0 +1,33 @@
+/** Footer styles */
+footer {
+    background-color: $OHGrey;
+    padding-top:1.25rem;
+    color: $OHWhite;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    padding-bottom: 2.25rem;
+    h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+    .footer--social-media {
+        font-size: 2.25rem;
+        display: flex;
+        justify-content: center;
+        a {
+            margin-left: 0.5rem;
+            &:first-of-type {
+                margin-left: 0;
+            }
+        }
+    }
+    .footer--secondary-nav {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
