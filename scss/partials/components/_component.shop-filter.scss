@@ -1,5 +1,8 @@
 /** Shop Filter styles */
 .shop--filter {
+    &__category {
+        cursor: pointer;
+    }
     &__category-name {
         &:hover {
             background-color: $OHLightGreen;

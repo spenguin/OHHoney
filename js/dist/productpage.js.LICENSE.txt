@@ -19,7 +19,7 @@
  */
 
 /**
- * @license React 
+ * @license React
  * scheduler.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.

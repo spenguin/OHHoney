@@ -1,6 +1,9 @@
 <?php
 /** Site functions */
 
+add_action('init', 'register_my_session');
+add_action('template_redirect', 'jltwp_adminify_remove_archives_category');
+
 function register_my_session()
 {
     if( !session_id() )
@@ -10,7 +13,18 @@ function register_my_session()
     if(!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
 }
 
-add_action('init', 'register_my_session');
+
+
+/*  Redirect requests on shop page to homepage  */
+
+
+function jltwp_adminify_remove_archives_category() {
+   if ( is_shop() ){
+        $target = home_url('/online-shop');
+        // $status = '301';
+        wp_redirect($target);
+        exit;
+    }}
 
 
 function get_post_by_title($title = NULL, $element="content", $post_type="post")

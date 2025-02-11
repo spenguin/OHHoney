@@ -11,7 +11,9 @@ function get_products()
 {
     $args = [
         'post_type'         => 'product',
-        'posts_per_page'    => -1
+        'posts_per_page'    => -1,
+        'orderby'           => 'title',
+        'order'             => 'ASC'
     ];
 
     $query  = new WP_Query($args); //var_dump($query);

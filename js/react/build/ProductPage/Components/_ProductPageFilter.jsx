@@ -25,7 +25,7 @@ const ProductPageFilter = ({terms, setSelectedCategory}) => {
                     View Filter
                  </div>
                  {showFilter && 
-                    <div className="shop--filter__wrapper hide">
+                    <div className="shop--filter__wrapper">
                         {terms.map((term) => {
                             return (
                                 <div className="shop--filter__category" onClick={() => changeSelectedCategory(term.slug)}>
