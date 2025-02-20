@@ -10,7 +10,10 @@ function initialize()
 {
     add_action('init', '\CustomPosts\custom_post_type', 0);
     // add_action('init', '\CustomPosts\custom_taxonomy_type', 0);
-    add_action('admin_init', '\CustomPosts\admin_init');    
+    add_action('admin_init', '\CustomPosts\admin_init');   
+    
+    add_action('save_post_market', '\CustomPosts\save_market_location' );
+    add_action('save_post_market', '\CustomPosts\save_date_time' );
 }
 
 function custom_post_type()
@@ -73,6 +76,7 @@ function custom_post_type()
 function admin_init()
 {
     add_meta_box('market_location_meta', 'Market Web Address and Street Address', '\CustomPosts\market_location', 'market');
+    add_meta_box('market_date_time_meta', 'Market Dates and Times', '\CustomPosts\market_date_time', 'market' );
 }
 
 
@@ -88,10 +92,57 @@ function market_location()
     $address= (isset($custom['address'][0])) ? $custom['address'][0] : '';
 
 ?>
-    <label for="url">Web Address:</label>
-    <input type="text" name="url" value="<?php echo $url; ?>" />
-    <label for="address">Market Address:</label>
-    <input type="text" name="address" value="<?php echo $address; ?>" />
+    <label for="url" style="width:100px;display:inline-block;">Web Address:</label>
+    <input type="text" name="url" value="<?php echo $url; ?>" style="width:300px"/><br /><br />
+    <label for="address" style="width:100px;display:inline-block">Market Address:</label>
+    <input type="text" name="address" value="<?php echo $address; ?>" style="width:300px"/>
 
 <?php    
+}
+
+function save_market_location()
+{
+    global $post;
+    if( empty($post->ID)) return;
+
+    $custom = get_post_custom($post->ID);
+    $url    = $_POST['url'];
+    $address= $_POST['address'];
+    update_post_meta($post->ID, 'url', $url );
+    update_post_meta($post->ID, 'address', $address );
+}
+
+
+/**
+ * Market Dates and Times
+ */
+function market_date_time()
+{
+    global $post;
+
+    $custom = get_post_custom($post->ID);
+    $market_date_time   = isset($custom['market_date_time'] ) ? unserialize($custom['market_date_time'][0]) : []; 
+    for( $i=0; $i<5; $i++ )
+    {
+        
+        $date   = isset( $market_date_time[$i] ) ? $market_date_time[$i]["'date'"] : ''; 
+        $start  = isset( $market_date_time[$i] ) ? $market_date_time[$i]["'start'"] : '';
+        $end    = isset( $market_date_time[$i] ) ? $market_date_time[$i]["'end'"] : '';
+        ?>
+            <div class="market_date_time--wrapper">
+                <label>Date:</label><input type="date" value="<?php echo $date; ?>" name="market_date_time[<?php echo $i; ?>]['date']" /><br />
+                <label>Start Time:</label><input type="time" value="<?php echo $start; ?>" name="market_date_time[<?php echo $i; ?>]['start']" /><br />
+                <label>End Time:</label><input type="time" value="<?php echo $end; ?>" name="market_date_time[<?php echo $i; ?>]['end']" /><br /><br />
+            </div>  
+        <?php
+    }
+}
+
+function save_date_time()
+{
+    global $post;
+    if (empty($post->ID)) return; 
+    $market_date_time = $_POST['market_date_time']; 
+    update_post_meta($post->ID, 'market_date_time', $market_date_time );
+
 }
