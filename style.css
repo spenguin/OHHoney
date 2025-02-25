@@ -1213,6 +1213,11 @@ body {
 }
 
 /** Section styles */
+.home section {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
 .homepage--newsletter-signup {
   background-color: #A6CA44;
   padding: 1.25rem 5%;
@@ -1391,6 +1396,22 @@ footer .footer--secondary-nav {
 .shop--products__item-image img {
   height: 100%;
   width: auto;
+}
+
+/** Market styling */
+.markets {
+  display: flex;
+  flex-direction: column;
+}
+.markets_market {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding: 2rem 0.25rem;
+  padding-right: 0.25rem;
+  padding-left: 0.25rem;
+  margin-bottom: 1rem;
+  border-radius: 0.1875rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

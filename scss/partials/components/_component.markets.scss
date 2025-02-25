@@ -1,0 +1,16 @@
+/** Market styling */
+
+.markets {
+    display: flex;
+    flex-direction: column;
+    &_market {
+        background-color: rgba(0,0,0,.4);
+        color: $OHWhite;
+        padding: 2rem .25rem;
+        padding-right: 0.25rem;
+        padding-left: 0.25rem;
+        margin-bottom: 1rem;
+        border-radius: $borderRadius;
+        text-align: center;
+    }
+}
