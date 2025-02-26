@@ -1264,6 +1264,7 @@ header {
 .header-bar {
   background-color: #637329;
   color: #fff;
+  position: relative;
 }
 .header-bar a {
   color: #fff;
@@ -1275,29 +1276,79 @@ header {
 .header-bar a:hover {
   color: #A6CA44;
 }
+.header-bar__logo {
+  position: absolute;
+  width: 4.5rem;
+  top: 0;
+}
+@media screen and (min-width: 768px) {
+  .header-bar__logo {
+    width: 8.5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header-bar__logo {
+    width: 10.5rem;
+  }
+}
 
 .header-icon-container {
   display: flex;
   justify-content: end;
-  padding-right: 0.15rem;
+  padding-right: 0.25rem;
+}
+@media screen and (min-width: 768px) {
+  .header-icon-container {
+    padding-right: 2.5rem;
+    margin-top: 0.85rem;
+  }
 }
 .header-icon-container a {
   margin-left: 0.85rem;
   color: #fff;
+  font-size: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .header-icon-container a {
+    font-size: 2rem;
+    margin-left: 1.15rem;
+  }
 }
 
+@media screen and (min-width: 768px) {
+  .menu-primary-container {
+    display: flex;
+    justify-content: end;
+  }
+}
 .menu-primary-container ul {
   display: flex;
   margin: 0;
-  padding: 0.85rem 0.15rem;
+  padding: 0.85rem 0.25rem;
   list-style: none;
   justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  .menu-primary-container ul {
+    width: 75%;
+    margin-right: 2.5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .menu-primary-container ul {
+    width: 50%;
+  }
 }
 .menu-primary-container ul a {
   color: #fff;
   text-decoration: none;
   font-size: 0.85rem;
   text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .menu-primary-container ul a {
+    font-size: 1rem;
+  }
 }
 .menu-primary-container ul a:hover {
   text-decoration: underline;
