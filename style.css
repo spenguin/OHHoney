@@ -927,12 +927,6 @@ textarea {
   display: none;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0;
-}
-
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
@@ -1152,7 +1146,7 @@ textarea {
   font-style: normal;
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /** Variables */
@@ -1197,25 +1191,31 @@ body {
   padding: 0 5%;
 }
 
-.store-front-open {
-  background-color: #262627;
-  padding-left: 5%;
-  padding-right: 5%;
-  margin-left: -5%;
-  margin-right: -5%;
-  padding-bottom: 1rem;
+/** WRappers styles */
+.max-wrapper {
+  padding: 0 5%;
+}
+@media screen and (min-width: 768px) {
+  .max-wrapper {
+    padding: 0 15%;
+  }
+}
+.max-wrapper__narrow {
+  max-width: 729px;
+  margin: 0 auto;
 }
 
-/** WRappers styles */
 .cta--wrapper {
   display: flex;
   justify-content: center;
 }
 
 /** Section styles */
-.home section {
-  margin-left: 5%;
-  margin-right: 5%;
+.store-front-open {
+  background-color: #262627;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 1rem;
 }
 
 .homepage--newsletter-signup {
@@ -1234,15 +1234,23 @@ a {
 
 /** Heading Styles */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "BelleFair", serif;
+  font-family: "Bellefair", serif;
   text-align: center;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 2rem;
 }
 
 /** Button styles */
 .button {
   border-radius: 0.125rem;
   text-transform: uppercase;
-  font-family: "BelleFair", serif;
+  font-family: "Bellefair", serif;
   font-weight: 700;
   text-align: center;
   padding: 0.5rem 1.25rem;
@@ -1254,6 +1262,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
+/** Forms style */
 /** Component styles aggregator */
 /** Styles for header */
 header {
@@ -1409,6 +1418,20 @@ footer .footer--secondary-nav {
 
 .p-2 {
   padding: 0 0.5rem !important;
+}
+
+.homepage--newsletter-signup__inner form {
+  padding: 5%;
+}
+.homepage--newsletter-signup__inner p {
+  font-size: 1.25rem;
+  color: #A6CA44;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.homepage--newsletter-signup__content {
+  padding: 0.25rem 0.85rem;
 }
 
 /** Shop Filter styles */

@@ -12,3 +12,19 @@
 .p-2 {
     padding: 0 0.5rem!important;
 }
+
+
+.homepage--newsletter-signup__inner {
+    form {
+        padding: 5%;
+    }
+    p {
+        font-size: 1.25rem;
+        color: $OHLightGreen;
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+}
+.homepage--newsletter-signup__content {
+    padding: 0.25rem 0.85rem;
+}
