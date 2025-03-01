@@ -1473,9 +1473,16 @@ footer .footer--secondary-nav {
 }
 
 /** Market styling */
-.markets {
+.markets__inner {
   display: flex;
   flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .markets__inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
 .markets_market {
   background-color: rgba(0, 0, 0, 0.4);
@@ -1486,6 +1493,32 @@ footer .footer--secondary-nav {
   margin-bottom: 1rem;
   border-radius: 0.1875rem;
   text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .markets_market {
+    width: 45%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .markets_market {
+    width: 40%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+.markets_market h3 {
+  line-height: 2rem;
+  height: 5rem;
+}
+.markets_market h3 i {
+  margin-left: 0.45rem;
+  font-size: 1rem;
+}
+.markets_market p i {
+  margin-left: 0.45rem;
+  font-size: 0.75rem;
 }
 
 /*# sourceMappingURL=style.css.map */

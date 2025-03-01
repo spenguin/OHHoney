@@ -5,6 +5,10 @@
 
 function oh_markets( $atts = [], $content = null, $tag = '' )
 { 
+    extract(shortcode_atts(array(
+        'background' => '',
+     ), $atts));
+    
     $args = [
         'post_type'         => 'market',
         'posts_per_page'    => -1
@@ -14,30 +18,36 @@ function oh_markets( $atts = [], $content = null, $tag = '' )
 
     ob_start();
     if( $query->have_posts()) : 
-        $market_date_time = get_post_meta( $query->post->ID, 'market_date_time', TRUE );
-        $url                = get_post_meta( $query->post->ID, 'url', TRUE );
-        $address            = get_post_meta( $query->post->ID, 'address', TRUE );
+
     ?>
-        <section class="markets">
+        <section class="markets" style="background-image:url(<?php echo $background; ?>)">
             <?php if( $query->count_posts() > 1 ): ?>
                 <h2>Find us at these Farmers Markets</h2>
             <?php else: ?>
                 <h2>Find us at this Farmers Market</h2>
             <?php endif; ?>
-            <?php while($query->have_posts()): $query->the_post(); ?>
-                <div class="markets_market">
-                    <?php the_title( '<h3>', '</h3>' ); ?>
-                    <p><?php echo $address; ?></p>
-                    <div class="markets_market--dates">
-                        <?php 
-                            foreach( $market_date_time as $m ): 
-                                if( empty($m["'date'"] ) ) break;
-                                ?>
-                                <p><?php echo $m["'date'"]; ?><br><?php echo $m["'start'"] . ' - ' . $m["'end'"]; ?></p>
-                            <?php endforeach; ?>
+            <div class="markets__inner max-wrapper__narrow">
+                <?php while($query->have_posts()): $query->the_post(); 
+                    $market_date_time = get_post_meta( $query->post->ID, 'market_date_time', TRUE );
+                    $url                = get_post_meta( $query->post->ID, 'url', TRUE );
+                    $address            = get_post_meta( $query->post->ID, 'address', TRUE );
+                ?>
+                    <div class="markets_market">
+                        <a href="<?php echo $url; ?>" target="_blank">
+                            <h3><?php the_title(); ?><i class="fa-solid fa-up-right-from-square"></i></h3>
+                        </a>
+                        <p><a href="https://maps.google.com/?q=<?php echo $address; ?>" target="_blank"><?php echo $address; ?><i class="fa-solid fa-up-right-from-square"></i></p>
+                        <div class="markets_market--dates">
+                            <?php 
+                                foreach( $market_date_time as $m ): 
+                                    if( empty($m["'date'"] ) ) break;
+                                    ?>
+                                    <p><?php echo date( 'l, M d Y', strtotime($m["'date'"]) ); ?><br><?php echo $m["'start'"] . ' - ' . $m["'end'"]; ?></p>
+                                <?php endforeach; ?>
+                        </div>
                     </div>
-                </div>
-            <?php endwhile; ?>
+                <?php endwhile; ?>
+            </div>
         </section>
     <?php endif; wp_reset_postdata();
     return ob_get_clean();

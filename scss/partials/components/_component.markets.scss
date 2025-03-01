@@ -1,8 +1,18 @@
 /** Market styling */
 
 .markets {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        @include screen-greater-than(tablet)
+        {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
     &_market {
         background-color: rgba(0,0,0,.4);
         color: $OHWhite;
@@ -12,5 +22,29 @@
         margin-bottom: 1rem;
         border-radius: $borderRadius;
         text-align: center;
+        @include screen-greater-than(tablet)
+        {
+            width: 45%;
+            margin-left: 2.5%;
+            margin-right: 2.5%;
+        }
+        @include screen-greater-than(desktop)
+        {
+            width: 40%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        h3 {
+            line-height: 2rem;
+            height: 5rem;
+            i {
+                margin-left: 0.45rem;
+                font-size: 1rem;
+            }
+        }
+        p i {
+            margin-left: 0.45rem;
+            font-size: 0.75rem;
+        }
     }
 }
