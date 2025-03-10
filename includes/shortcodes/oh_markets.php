@@ -20,7 +20,8 @@ function oh_markets( $atts = [], $content = null, $tag = '' )
     if( $query->have_posts()) : 
 
     ?>
-        <section class="markets" style="background-image:url(<?php echo $background; ?>)">
+        <section class="markets" style="background-image:url(<?php echo $background; ?>);background-size: cover;
+}">
             <?php if( $query->count_posts() > 1 ): ?>
                 <h2>Find us at these Farmers Markets</h2>
             <?php else: ?>

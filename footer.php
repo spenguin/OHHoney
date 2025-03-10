@@ -27,7 +27,7 @@
 			</a>
 
 		</div>
-		<div class="footer--secondary-nav">
+		<div class="footer--secondary-nav max-wrapper__narrow">
 			<a href="/terms-conditions">Terms & Conditions</a>
 			<a href="/privacy-policy">Privacy Policy</a>
 		</div>

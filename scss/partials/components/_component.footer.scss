@@ -28,6 +28,17 @@ footer {
     .footer--secondary-nav {
         display: flex;
         justify-content: space-between;
+        flex-direction: column;
+        text-align: center;
+        @include screen-greater-than(tablet)
+        {
+            flex-direction: row;
+            text-align: inherit;
+            justify-content: space-between;
+            width:50%;
+            padding-left:0.85%;
+            padding-right: 0.85%;
+        }
     }
 }
 

@@ -1217,6 +1217,9 @@ body {
   padding-right: 5%;
   padding-bottom: 1rem;
 }
+.store-front-open h2 {
+  color: #fff;
+}
 
 .homepage--newsletter-signup {
   background-color: #A6CA44;
@@ -1240,10 +1243,17 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
   font-size: 2.25rem;
+  color: black;
 }
 
 h3 {
   font-size: 2rem;
+}
+
+h4 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: black;
 }
 
 /** Button styles */
@@ -1394,6 +1404,18 @@ footer .footer--social-media a:first-of-type {
 footer .footer--secondary-nav {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  footer .footer--secondary-nav {
+    flex-direction: row;
+    text-align: inherit;
+    justify-content: space-between;
+    width: 50%;
+    padding-left: 0.85%;
+    padding-right: 0.85%;
+  }
 }
 
 /** Section styles */
@@ -1473,9 +1495,16 @@ footer .footer--secondary-nav {
 }
 
 /** Market styling */
+.markets {
+  padding-top: 1.5rem;
+}
+.markets h2 {
+  color: #fff;
+}
 .markets__inner {
   display: flex;
   flex-direction: column;
+  padding-top: 1.25rem;
 }
 @media screen and (min-width: 768px) {
   .markets__inner {
@@ -1490,23 +1519,10 @@ footer .footer--secondary-nav {
   padding: 2rem 0.25rem;
   padding-right: 0.25rem;
   padding-left: 0.25rem;
-  margin-bottom: 1rem;
+  margin: 0 auto 2rem auto;
   border-radius: 0.1875rem;
   text-align: center;
-}
-@media screen and (min-width: 768px) {
-  .markets_market {
-    width: 45%;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .markets_market {
-    width: 40%;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
+  width: 328px;
 }
 .markets_market h3 {
   line-height: 2rem;
@@ -1519,6 +1535,39 @@ footer .footer--secondary-nav {
 .markets_market p i {
   margin-left: 0.45rem;
   font-size: 0.75rem;
+}
+
+/** Recipe Display */
+.recipes h2 {
+  color: #fff;
+}
+.recipes h4 {
+  color: #fff;
+}
+.recipes__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.25rem;
+}
+@media screen and (min-width: 768px) {
+  .recipes__wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.recipes__recipe {
+  width: 328px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0 auto 2rem auto;
+  border-radius: 0.1875rem;
+}
+.recipes__recipe--name {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1.5rem 0.25rem;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,42 @@
+/** Recipe Display */
+
+.recipes {
+    h2 {
+        color: $OHWhite;
+    }
+    h4 {
+        color: $OHWhite;
+    }
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        padding-top: 1.25rem;
+        @include screen-greater-than(tablet)
+        {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+    &__recipe {
+        width: 328px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin: 0 auto 2rem auto;
+        border-radius: $borderRadius;
+        @include screen-greater-than(tablet)
+        {
+            // margin-left: 2.5%;
+            // margin-right: 2.5%;
+            // width: 45%;
+        }
+        &--name {
+            color: $OHWhite;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1.5rem 0.25rem;
+        }
+    }
+
+
+}

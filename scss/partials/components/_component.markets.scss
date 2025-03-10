@@ -1,11 +1,14 @@
 /** Market styling */
 
 .markets {
-    // display: flex;
-    // flex-direction: column;
+    padding-top: 1.5rem;
+    h2 {
+        color: $OHWhite;
+    }
     &__inner {
         display: flex;
         flex-direction: column;
+        padding-top: 1.25rem;
         @include screen-greater-than(tablet)
         {
             flex-direction: row;
@@ -19,21 +22,22 @@
         padding: 2rem .25rem;
         padding-right: 0.25rem;
         padding-left: 0.25rem;
-        margin-bottom: 1rem;
+        margin: 0 auto 2rem auto;
         border-radius: $borderRadius;
         text-align: center;
-        @include screen-greater-than(tablet)
-        {
-            width: 45%;
-            margin-left: 2.5%;
-            margin-right: 2.5%;
-        }
-        @include screen-greater-than(desktop)
-        {
-            width: 40%;
-            margin-left: 5%;
-            margin-right: 5%;
-        }
+        width: 328px;
+        // @include screen-greater-than(tablet)
+        // {
+        //     width: 45%;
+        //     margin-left: 2.5%;
+        //     margin-right: 2.5%;
+        // }
+        // @include screen-greater-than(desktop)
+        // {
+        //     width: 40%;
+        //     margin-left: 5%;
+        //     margin-right: 5%;
+        // }
         h3 {
             line-height: 2rem;
             height: 5rem;
