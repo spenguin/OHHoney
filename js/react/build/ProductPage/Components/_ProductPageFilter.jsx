@@ -9,9 +9,11 @@ const ProductPageFilter = ({terms, setSelectedCategory}) => {
     // set State vars
     const [showFilter, setShowFilter]   = useState(false);
 
+
     // set change functions
     const changeSelectedCategory = (slug) => {
         setSelectedCategory(slug);
+        changeShowFilter();
     }
 
     const changeShowFilter = () => {

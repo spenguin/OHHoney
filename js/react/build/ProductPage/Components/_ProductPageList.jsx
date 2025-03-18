@@ -9,7 +9,7 @@ const ProductPageList = ({filteredProducts, selectedCategory}) => { //console.lo
     return (
         <div class="shop--products__list" key={selectedCategory}>
             {/* {Object.keys(filteredProducts).map((p, i) => { //console.log(filteredProducts[p]); */}
-            {filteredProducts.map(p => { console.log( 'p', p );
+            {filteredProducts.map(p => { //console.log( 'p', p );
                 return (
                     <div class="shop--products__item">
                     {/* <a href={filteredProducts[p]['url']}> */}

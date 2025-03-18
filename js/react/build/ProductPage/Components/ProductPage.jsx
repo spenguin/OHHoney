@@ -10,11 +10,12 @@ import ProductPageList from './_ProductPageList.jsx';
 
 // import css
 
-const ProductPage = ({terms, products}) => {
+const ProductPage = ({terms, products}) => {//console.log('terms', terms);
 
     // Set State vars
     const [selectedCategory, setSelectedCategory]   = useState('');
     const [filteredProducts, setFilteredProducts]   = useState(products);
+    const [selectedTerm, setSelectedTerm]           = useState('');
 
     // set change functions
     useEffect(()=>{ 
@@ -23,6 +24,8 @@ const ProductPage = ({terms, products}) => {
             setFilteredProducts(
                 products.filter(p => p.category.includes(selectedCategory ))
             );
+            let tmp = terms.filter( t => t.slug == selectedCategory ); console.log('tmp', tmp);
+            setSelectedTerm( tmp[0].name )
         }
     },[selectedCategory])
 
@@ -33,6 +36,9 @@ const ProductPage = ({terms, products}) => {
                 terms = {terms}
                 setSelectedCategory = {setSelectedCategory}
             />
+            <div className="show--category__selected">
+                {selectedTerm}
+            </div>
             <ProductPageList
                 filteredProducts = {filteredProducts}
                 selectedCategory = {selectedCategory}

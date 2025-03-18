@@ -18,7 +18,7 @@ function oh_store_front_open( $atts = [], $content = null, $tag = '' )
                 </div>
                 <?php echo $content; ?>
                 <div class="cta--wrapper">
-                    <a href="<?php echo site_url(); ?>/shop" class="button button-link">Online Store</a>
+                    <a href="<?php echo site_url(); ?>/online-shop" class="button button-link">Online Store</a>
                 </div>
             </div>
         </section>
