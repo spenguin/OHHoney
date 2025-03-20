@@ -5,23 +5,40 @@
         flex-wrap: wrap;
     }
     &__item {
-        width: 50%;
-        background-color: $OHGrey;
-        box-sizing: border-box;
-        border: 1px solid $OHDarkGrey;
-        &:hover {
-            background-color: $OHLightGreen;
-        }
-        &-image {
-            background-color: $OHWhite;
-            overflow: hidden;
-            height:8rem;
-            display:flex;
-            justify-content: center;
-            img {
-                height: 100%;
-                width: auto;
+        width: 164px;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        &-name {
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1.5rem 0.25rem;
+            h3 {
+                font-size: 1.25rem;
             }
         }
     }
 }
+
+
+// width: 50%;
+// background-color: $OHGrey;
+// box-sizing: border-box;
+// border: 1px solid $OHDarkGrey;
+// &:hover {
+//     background-color: $OHLightGreen;
+// }
+// &-image {
+//     background-color: $OHWhite;
+//     overflow: hidden;
+//     height:8rem;
+//     display:flex;
+//     justify-content: center;
+//     img {
+//         height: 100%;
+//         width: auto;
+//     }
+// }

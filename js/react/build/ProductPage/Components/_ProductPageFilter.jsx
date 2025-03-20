@@ -7,7 +7,7 @@ import React, { useState, useEffect } from "react";
 const ProductPageFilter = ({terms, setSelectedCategory}) => {
 
     // set State vars
-    const [showFilter, setShowFilter]   = useState(false);
+    const [showFilter, setShowFilter]   = useState(false); 
 
 
     // set change functions
@@ -22,11 +22,11 @@ const ProductPageFilter = ({terms, setSelectedCategory}) => {
 
     return (
         <div className="shop--filter">
-             <div className="shop--filter__menu">
-                 <div className="shop--filter__button" onClick={() => changeShowFilter()}>
+            <div className="shop--filter__menu">
+                <div className="shop--filter__button" onClick={() => changeShowFilter()}>
                     View Filter
-                 </div>
-                 {showFilter && 
+                </div>
+                {showFilter ?
                     <div className="shop--filter__wrapper">
                         {terms.map((term) => {
                             return (
@@ -40,8 +40,9 @@ const ProductPageFilter = ({terms, setSelectedCategory}) => {
                             )
                         })}
                     </div> 
+                    : ''
                 }               
-             </div>
+            </div>
          </div>
 
     )

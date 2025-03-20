@@ -7,23 +7,15 @@ import React, { useState, useEffect } from "react";
 const ProductPageList = ({filteredProducts, selectedCategory}) => { //console.log('products', filteredProducts );
 
     return (
-        <div class="shop--products__list" key={selectedCategory}>
-            {/* {Object.keys(filteredProducts).map((p, i) => { //console.log(filteredProducts[p]); */}
+        <div className="shop--products__list max-wrapper__narrow" key={selectedCategory}>
             {filteredProducts.map(p => { //console.log( 'p', p );
+                // const backgroundUrl = p.image; 
                 return (
-                    <div class="shop--products__item">
-                    {/* <a href={filteredProducts[p]['url']}> */}
-                        <a href={p.url}>
-                        <div class="shop--products__item-image">
-                            {/* <img src={filteredProducts[p]['image']} /> */}
-                            <img src={p.image} />
-                        </div>
-                        <div class="shop--products__item-text">
-                            {/* <h3>{filteredProducts[p]['name']}</h3> */}
+                    <a href={p.url} style={{backgroundImage:`url(${p.image})`}} className="shop--products__item">
+                        <div className="shop--products__item-name">
                             <h3>{p.title}</h3>
                         </div>
                     </a>
-                </div>
                 )
             })}
         </div>

@@ -1,5 +1,12 @@
 /** Shop Filter styles */
 .shop--filter {
+    &__wrapper {
+        padding-left:0.85rem;
+    }
+    &__button {
+        cursor: pointer;
+        text-align: center;
+    }
     &__category {
         cursor: pointer;
     }
