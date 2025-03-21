@@ -1300,6 +1300,9 @@ header {
   width: 4.5rem;
   top: 0;
 }
+.header-bar__logo a {
+  padding: 0;
+}
 @media screen and (min-width: 768px) {
   .header-bar__logo {
     width: 8.5rem;
@@ -1479,6 +1482,7 @@ footer .footer--secondary-nav {
 .shop--products__list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 .shop--products__item {
   width: 164px;
@@ -1488,6 +1492,7 @@ footer .footer--secondary-nav {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  margin-bottom: 1rem;
 }
 .shop--products__item-name {
   color: #fff;

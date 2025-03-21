@@ -36,8 +36,10 @@ const ProductPage = ({terms, products}) => {//console.log('terms', terms);
                 terms = {terms}
                 setSelectedCategory = {setSelectedCategory}
             />
-            <div className="show--category__selected">
-                {selectedTerm}
+            <div className="show--category__selected max-wrapper__narrow">
+                {selectedTerm.length > 0 && 
+                    <span>Selected: {selectedTerm}</span>
+                }
             </div>
             <ProductPageList
                 filteredProducts = {filteredProducts}
