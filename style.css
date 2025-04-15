@@ -1431,6 +1431,26 @@ footer .footer--secondary-nav {
   text-transform: uppercase;
 }
 
+.frozen-desserts {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 1rem;
+  background-size: cover;
+  background-position-y: 25%;
+}
+.frozen-desserts h2 {
+  color: #fff;
+}
+.frozen-desserts h4 {
+  color: #fff;
+}
+
+.introduction {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 1rem;
+}
+
 /** Newsletter signup style */
 .w-full {
   width: 100%;

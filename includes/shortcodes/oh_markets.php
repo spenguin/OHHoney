@@ -37,7 +37,7 @@ function oh_markets( $atts = [], $content = null, $tag = '' )
                         <a href="<?php echo $url; ?>" target="_blank">
                             <h3><?php the_title(); ?><i class="fa-solid fa-up-right-from-square"></i></h3>
                         </a>
-                        <p><a href="https://maps.google.com/?q=<?php echo $address; ?>" target="_blank"><?php echo $address; ?><i class="fa-solid fa-up-right-from-square"></i></p>
+                        <p><a href="https://maps.google.com/?q=<?php echo $address; ?>" target="_blank"><?php echo $address; ?><i class="fa-solid fa-up-right-from-square"></i></a></p>
                         <div class="markets_market--dates">
                             <?php 
                                 foreach( $market_date_time as $m ): 

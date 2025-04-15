@@ -36,7 +36,7 @@ function get_products()
 
 
         $o[$ID]   = [
-            'title'     => get_the_title(),
+            'title'     => html_entity_decode(get_the_title()),
             'url'       => get_the_permalink(),
             'image'     => $imageUrl,//get_the_post_thumbnail_url(),
             'category'  => $terms

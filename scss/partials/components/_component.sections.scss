@@ -8,3 +8,23 @@
         text-transform: uppercase;
     }
 }
+
+.frozen-desserts {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 1rem;
+    background-size: cover;
+    background-position-y: 25%;
+    h2 {
+        color: $OHWhite;
+    }
+    h4 {
+        color: $OHWhite;
+    }
+}
+
+.introduction {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 1rem;
+}
