@@ -1604,4 +1604,32 @@ footer .footer--secondary-nav {
   padding-left: 0.85rem;
 }
 
+/** Cards styles */
+.card a {
+  width: 328px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0 auto 2rem auto;
+  border-radius: 0.1875rem;
+}
+.card__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.25rem;
+}
+@media screen and (min-width: 768px) {
+  .card__wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+.card--name {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1.5rem 0.25rem;
+}
+
 /*# sourceMappingURL=style.css.map */
