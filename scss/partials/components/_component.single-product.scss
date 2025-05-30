@@ -1,0 +1,29 @@
+/** Single Product styles */
+
+.single-product {
+    margin-bottom: 2rem;
+    &--header {
+        background-color: $OHDarkGrey;
+    }
+    &--wrapper {
+        background-color: $OHDarkGrey;
+        @include screen-greater-than(desktop) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &--images {
+        @include screen-greater-than(desktop) {
+            width: 48%;
+        }
+    }
+    &--content {
+        @include screen-greater-than(desktop) {
+            width: 48%;
+        }
+    }
+    .cart {
+        margin-bottom: 2rem;
+
+    }
+}

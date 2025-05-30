@@ -1,0 +1,25 @@
+/** Woocommerce styles */
+.product {
+    padding: 0 2%;
+}
+.woocommerce-product-gallery {
+    // padding: 0 2%;
+    &__image {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.single_add_to_cart_button {
+    border-radius: 0.125rem!important;
+    text-transform: uppercase;
+    font-family: "Bellefair", serif;
+    font-weight: 700!important;
+    text-align: center;
+    padding: 0.5rem 1.25rem!important;
+    box-shadow: 7px 7px 0 -3px $OHDarkGrey!important;
+    background-color: $OHGreen!important;
+    color: $OHLightGreen!important;
+    &:hover {
+        color: $OHWhite!important;
+    }
+}

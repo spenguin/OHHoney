@@ -28,12 +28,13 @@ require_once CORE_INC . 'custom-posts.php';
 require_once CORE_INC . 'shortcodes.php';
 require_once CORE_INC . 'site-functions.php';
 // require_once CORE_INC . 'post2post.php';
-// require_once CORE_INC . 'wcextension.php';
+require_once CORE_INC . 'wcextension.php';
 // require_once CORE_INC . 'calendar-functions.php';
 require_once CORE_INC . 'widgets.php';
 // require_once CORE_INC . 'hooks.php';
 require_once CORE_INC . 'product-functions.php';
 require_once CORE_INC . 'tools.php';
+require_once CORE_INC . 'slideshow.php';
 
 
 if( isset( $_GET['nobar'] ) )

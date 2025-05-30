@@ -35,6 +35,6 @@
 	</footer>
 
 	<?php wp_footer(); ?>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 </body>
 </html> 
