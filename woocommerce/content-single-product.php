@@ -31,8 +31,8 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 	</header>
 	<div class="single-product--wrapper max-wrapper">
 		<div class="single-product--images">
-			<?php do_action( 'woocommerce_before_single_product_summary' ); ?>
-			<?php //echo render_slideshow(); ?>
+			<?php //do_action( 'woocommerce_before_single_product_summary' ); ?>
+			<?php echo render_slideshow(); ?>
 		</div>	
 		<div class="single-product--content">
 			<?php do_action( 'woocommerce_single_product_summary' ); ?>
