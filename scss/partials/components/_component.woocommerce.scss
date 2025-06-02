@@ -23,3 +23,17 @@
         color: $OHWhite!important;
     }
 }
+
+// Product page
+.variations .label {
+    text-align: left;
+}
+.variations select {
+    width: 250px;
+}
+.variations_button {
+    display: flex;
+    .quantity {
+        margin-right: 0.5rem;
+    }
+}

@@ -1657,6 +1657,21 @@ footer .footer--secondary-nav {
   color: #fff !important;
 }
 
+.variations .label {
+  text-align: left;
+}
+
+.variations select {
+  width: 250px;
+}
+
+.variations_button {
+  display: flex;
+}
+.variations_button .quantity {
+  margin-right: 0.5rem;
+}
+
 /** Single Product styles */
 .single-product {
   margin-bottom: 2rem;
