@@ -1338,6 +1338,17 @@ header {
   }
 }
 
+.fa-shopping-cart {
+  position: relative;
+}
+.fa-shopping-cart span {
+  position: absolute;
+  left: 40%;
+  top: 25%;
+  font-size: 1.25rem;
+  color: #BF3434;
+}
+
 @media screen and (min-width: 768px) {
   .menu-primary-container {
     display: flex;

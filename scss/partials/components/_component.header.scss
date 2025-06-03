@@ -56,3 +56,14 @@ header {
         }
     }
 }
+
+.fa-shopping-cart {
+    position: relative;
+    span {
+        position: absolute;
+        left: 40%;
+        top: 25%;
+        font-size: 1.25rem;
+        color: $OHRed;
+    }
+}
