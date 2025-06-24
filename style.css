@@ -1258,18 +1258,18 @@ h4 {
 
 /** Button styles */
 .button {
-  border-radius: 0.125rem;
+  border-radius: 0.125rem !important;
   text-transform: uppercase;
   font-family: "Bellefair", serif;
   font-weight: 700;
   text-align: center;
-  padding: 0.5rem 1.25rem;
-  box-shadow: 7px 7px 0 -3px #0D0D0D;
-  background-color: #637329;
-  color: #A6CA44;
+  padding: 0.5rem 1.25rem !important;
+  box-shadow: 7px 7px 0 -3px #0D0D0D !important;
+  background-color: #637329 !important;
+  color: #A6CA44 !important;
 }
 .button:hover {
-  color: #fff;
+  color: #fff !important;
 }
 
 /** Forms style */
@@ -1681,6 +1681,26 @@ footer .footer--secondary-nav {
 }
 .variations_button .quantity {
   margin-right: 0.5rem;
+}
+
+/** Woocommerce Notices Wrapper */
+.woocommerce-notices-wrapper,
+.wc-empty-cart-message,
+.return-to-shop {
+  padding: 0 5%;
+}
+@media screen and (min-width: 768px) {
+  .woocommerce-notices-wrapper,
+.wc-empty-cart-message,
+.return-to-shop {
+    padding: 0 15%;
+  }
+}
+.woocommerce-notices-wrapper__narrow,
+.wc-empty-cart-message__narrow,
+.return-to-shop__narrow {
+  max-width: 729px;
+  margin: 0 auto;
 }
 
 /** Single Product styles */

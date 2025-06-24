@@ -1,17 +1,17 @@
 /** Button styles */
 
 .button {
-    border-radius: $btnRadius;
+    border-radius: $btnRadius!important;
     text-transform: uppercase;
     font-family: $header-family; 
     font-weight: 700;
     text-align: center;
-    padding: 0.5rem 1.25rem;
-    box-shadow: 7px 7px 0 -3px $OHDarkGrey;
-    background-color: $OHGreen;
-    color: $OHLightGreen;  
+    padding: 0.5rem 1.25rem!important;
+    box-shadow: 7px 7px 0 -3px $OHDarkGrey!important;
+    background-color: $OHGreen!important;
+    color: $OHLightGreen!important;  
     &:hover {
-        color: $OHWhite;
+        color: $OHWhite!important;
     }
 }
 
