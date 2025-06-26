@@ -1,0 +1,16 @@
+/** Store Opening Home Page styles */
+
+.store-hours__days {
+    list-style: none;
+    margin-bottom: 0;
+    li {
+        list-style: none;
+    }
+}
+
+.store-front-open a {
+    color: $OHLightGreen;
+    &:hover {
+        color: $OHGreen;
+    }
+}

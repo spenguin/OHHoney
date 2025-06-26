@@ -1733,4 +1733,20 @@ footer .footer--secondary-nav {
   margin-bottom: 2rem;
 }
 
+/** Store Opening Home Page styles */
+.store-hours__days {
+  list-style: none;
+  margin-bottom: 0;
+}
+.store-hours__days li {
+  list-style: none;
+}
+
+.store-front-open a {
+  color: #A6CA44;
+}
+.store-front-open a:hover {
+  color: #637329;
+}
+
 /*# sourceMappingURL=style.css.map */
