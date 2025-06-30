@@ -8,6 +8,8 @@
 //     pvd($product->is_type('variable'));
 // }
 
+add_action( 'woocommerce_checkout_before_customer_details', 'oh_select_collection_date', 20 );
+
 /**
  * Create product image carousel
  */
@@ -60,4 +62,12 @@ function render_slideshow()
     $image_ids = array_merge( $image_ids, $attachment_ids );
 
     return slideshow($image_ids);
+}
+
+/**
+ * Select the collection date for the order
+ */
+function oh_select_collection_date()
+{
+    echo '<p>Select collection date</p>';
 }
