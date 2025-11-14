@@ -882,7 +882,6 @@ textarea {
   .menu-toggle {
     display: none;
   }
-
   .main-navigation ul {
     display: flex;
   }
@@ -1691,8 +1690,8 @@ footer .footer--secondary-nav {
 }
 @media screen and (min-width: 768px) {
   .woocommerce-notices-wrapper,
-.wc-empty-cart-message,
-.return-to-shop {
+  .wc-empty-cart-message,
+  .return-to-shop {
     padding: 0 15%;
   }
 }
@@ -1747,6 +1746,16 @@ footer .footer--secondary-nav {
 }
 .store-front-open a:hover {
   color: #637329;
+}
+
+/** Collection Dates  style */
+.collection_dates--list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.collection_dates--list li input {
+  margin-right: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

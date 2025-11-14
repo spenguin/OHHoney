@@ -91,11 +91,12 @@ function oh_select_collection_date()
     $query = new WP_Query( $args );
     
     if( $query->have_posts()): while($query->have_posts()): $query->the_post();
-        $market_title   = get_the_title();
-        $market_date_time = get_post_meta( $query->post->ID, 'market_date_time', TRUE );
+        $market_title   = get_the_title(); 
+        $market_date_time = get_post_meta( $query->post->ID, 'market_date_time', TRUE ); //pvd($market_date_time);
         foreach( $market_date_time as $m ): 
             if( empty($m["'date'"] ) ) continue;
-            $market_date = date('Y-m-d', strtotime($m["'date'"]));
+            if( strtotime($m["'date'"]) < time() ) continue;
+            $market_date = date('Y-m-d', strtotime($m["'date'"])); 
             if( array_key_exists($market_date, $availableDates ))
             {
                 $availableDates[$market_date]   = $market_title;
@@ -105,21 +106,27 @@ function oh_select_collection_date()
     endwhile; endif; wp_reset_postdata();
     
     // ob_start(); ?>
-    <ul>
+    <p>Select Collection Date</p>
+    <ul class="collection_dates--list">
         <?php    
+            $month = '';
             foreach( $availableDates as $date => $location )
-            { ?>
-                <li>
+            { 
+                if( ($newMonth  = date( 'F', strtotime($date) ) )  != $month )
+                {
+                    $month      = $newMonth;
+                    ?>
+                    <li>&nbsp;</li>
+                    <li><?php echo $month; ?></li>
                     <?php
-                        if( !empty($location) ): ?>
-                            <input type="checkbox" name="selectedDate" value="<?php echo $date; ?>" />
-                    <?php endif; ?>
-                    <?php echo $date; ?>
-                    <?php
-                        if( !empty($location) ): ?>
-                            - <?php echo $location; ?>
+                }
+                ?>
+                <?php
+                    if( !empty($location) ): ?>
+                        <li>
+                            <input type="radio" name="selectedDate" value="<?php echo $date; ?>" /><?php echo $date; ?> - <?php echo $location; ?>
+                        </li>
                     <?php endif; ?>                    
-                </li>
                 <?php
             }
     ?></ul><?php
