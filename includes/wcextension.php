@@ -9,6 +9,7 @@
 // }
 
 add_action( 'woocommerce_checkout_before_customer_details', 'oh_select_collection_date', 20 );
+add_action( 'woocommerce_checkout_update_order_meta', 'oh_select_collection_date_order_meta' );
 
 /**
  * Create product image carousel
@@ -133,6 +134,11 @@ function oh_select_collection_date()
     // return ob_get_clean();
 }
 
+function oh_select_collection_date_order_meta($order_id)
+{
+    if (!empty($_POST['selectedDate'])) {update_post_meta($order_id, 'selectedDate',sanitize_text_field($_POST['selectedDate']));}
+}
+
 // $dateString = '2024-07-25'; // Replace with your desired date
 // $timestamp = strtotime($dateString); // Convert the date string to a Unix timestamp
 // $dayOfWeekIndex = date('w', $timestamp); // Get the day of the week as an index (0 for Sunday, 6 for Saturday)
@@ -156,6 +162,8 @@ function getDatesForPeriod($startDate, $period)
 
     return $dates;
 }
+
+
 
 // // Example usage:
 // $startDate = '2025-07-01';
