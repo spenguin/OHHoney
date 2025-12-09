@@ -70,6 +70,43 @@ function render_slideshow()
  */
 function oh_select_collection_date()
 {
+    $availableDates = get_available_collection_dates();
+    
+    // ob_start(); ?>
+    <p>Select Collection Date</p>
+    <ul class="collection_dates--list">
+        <?php    
+            $month = '';
+            foreach( $availableDates as $date => $location )
+            { 
+                if( ($newMonth  = date( 'F', strtotime($date) ) )  != $month )
+                {
+                    $month      = $newMonth;
+                    ?>
+                    <li>&nbsp;</li>
+                    <li><?php echo $month; ?></li>
+                    <?php
+                }
+                ?>
+                <?php
+                    if( !empty($location) ): ?>
+                        <li>
+                            <input type="radio" name="selectedDate" value="<?php echo $date; ?>" /><?php echo $date; ?> - <?php echo $location; ?>
+                        </li>
+                    <?php endif; ?>                    
+                <?php
+            }
+    ?></ul><?php
+    // return ob_get_clean();
+}
+
+function oh_select_collection_date_order_meta($order_id)
+{
+    if (!empty($_POST['selectedDate'])) {update_post_meta($order_id, 'selectedDate',sanitize_text_field($_POST['selectedDate']));}
+}
+
+function get_available_collection_dates()
+{
     $dates = getDatesForPeriod(date('Y-m-d'), '60' );
     $availableDates = [];
     
@@ -105,45 +142,15 @@ function oh_select_collection_date()
         endforeach;
 
     endwhile; endif; wp_reset_postdata();
-    
-    // ob_start(); ?>
-    <p>Select Collection Date</p>
-    <ul class="collection_dates--list">
-        <?php    
-            $month = '';
-            foreach( $availableDates as $date => $location )
-            { 
-                if( ($newMonth  = date( 'F', strtotime($date) ) )  != $month )
-                {
-                    $month      = $newMonth;
-                    ?>
-                    <li>&nbsp;</li>
-                    <li><?php echo $month; ?></li>
-                    <?php
-                }
-                ?>
-                <?php
-                    if( !empty($location) ): ?>
-                        <li>
-                            <input type="radio" name="selectedDate" value="<?php echo $date; ?>" /><?php echo $date; ?> - <?php echo $location; ?>
-                        </li>
-                    <?php endif; ?>                    
-                <?php
-            }
-    ?></ul><?php
-    // return ob_get_clean();
+
+    return $availableDates;
 }
 
-function oh_select_collection_date_order_meta($order_id)
+function get_location_by_collection_date($date)
 {
-    if (!empty($_POST['selectedDate'])) {update_post_meta($order_id, 'selectedDate',sanitize_text_field($_POST['selectedDate']));}
+    $availableDates = get_available_collection_dates(); 
+    return $availableDates[$date];
 }
-
-// $dateString = '2024-07-25'; // Replace with your desired date
-// $timestamp = strtotime($dateString); // Convert the date string to a Unix timestamp
-// $dayOfWeekIndex = date('w', $timestamp); // Get the day of the week as an index (0 for Sunday, 6 for Saturday)
-
-// echo "The day of the week index for " . $dateString . " is: " . $dayOfWeekIndex;
 
 /** 
  * Get all Dates from Start Date for specified period
