@@ -91,7 +91,7 @@ function oh_select_collection_date()
                 <?php
                     if( !empty($location) ): ?>
                         <li>
-                            <input type="radio" name="selectedDate" value="<?php echo $date; ?>" /><?php echo $date; ?> - <?php echo $location; ?>
+                            <input type="radio" name="selectedDate" value="<?php echo $date; ?>" /><?php echo $date; ?> - <?php echo $location['place']; ?>
                         </li>
                     <?php endif; ?>                    
                 <?php
@@ -117,6 +117,13 @@ function get_available_collection_dates()
     {   
         $available  = empty($display_shop_hours["'c'"][date('w', strtotime($date))]) ? '' : 'In Store';
         $availableDates[$date]  = $available;
+        if( !empty($available) )
+        {
+            $availableDates[$date]  = [
+                'place'     => $available,
+                'address'   => '97-2710 Barnet Hwy, Coquitlam BC'
+            ];
+        }
     }
     
     // Now work through all Market dates
@@ -130,6 +137,7 @@ function get_available_collection_dates()
     
     if( $query->have_posts()): while($query->have_posts()): $query->the_post();
         $market_title   = get_the_title(); 
+        $market_address = get_post_meta( $query->post->ID, 'address', TRUE );
         $market_date_time = get_post_meta( $query->post->ID, 'market_date_time', TRUE ); //pvd($market_date_time);
         foreach( $market_date_time as $m ): 
             if( empty($m["'date'"] ) ) continue;
@@ -137,7 +145,10 @@ function get_available_collection_dates()
             $market_date = date('Y-m-d', strtotime($m["'date'"])); 
             if( array_key_exists($market_date, $availableDates ))
             {
-                $availableDates[$market_date]   = $market_title;
+                $availableDates[$market_date]   = [
+                    'place'     => $market_title,
+                    'address'   => $market_address
+                ];
             }
         endforeach;
 

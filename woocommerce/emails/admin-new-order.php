@@ -58,10 +58,11 @@ do_action( 'woocommerce_email_order_meta', $order, $sent_to_admin, $plain_text, 
  * @hooked WC_Emails::email_address() Shows email address
  */
 do_action( 'woocommerce_email_customer_details', $order, $sent_to_admin, $plain_text, $email );
-$selectedDate = get_post_meta( $order->ID, 'selectedDate', TRUE );
+$selectedDate 	= get_post_meta( $order->ID, 'selectedDate', TRUE );
+$location		= get_location_by_collection_date($selectedDate);
 
 ?>
-    <p>Order collection set for <?php echo $selectedDate; ?> at <?php echo get_location_by_collection_date($selectedDate); ?></p>
+    <p>Order collection set for <?php echo $selectedDate; ?> at <?php echo $location['place']; ?> (<?php echo $location['address']; ?>)</p>
 
 <?php
 
