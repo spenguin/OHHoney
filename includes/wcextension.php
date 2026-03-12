@@ -138,19 +138,23 @@ function get_available_collection_dates()
     if( $query->have_posts()): while($query->have_posts()): $query->the_post();
         $market_title   = get_the_title(); 
         $market_address = get_post_meta( $query->post->ID, 'address', TRUE );
-        $market_date_time = get_post_meta( $query->post->ID, 'market_date_time', TRUE ); //pvd($market_date_time);
-        foreach( $market_date_time as $m ): 
-            if( empty($m["'date'"] ) ) continue;
-            if( strtotime($m["'date'"]) < time() ) continue;
-            $market_date = date('Y-m-d', strtotime($m["'date'"])); 
-            if( array_key_exists($market_date, $availableDates ))
-            {
-                $availableDates[$market_date]   = [
-                    'place'     => $market_title,
-                    'address'   => $market_address
-                ];
-            }
-        endforeach;
+        $market_date_time   = get_post_meta( $query->post->ID, 'market_date_time', TRUE ); //pvd($market_date_time);
+        if( !empty($market_date_time ) )
+        {
+            $market_date_time   = explode( "\n", $market_date_time ); 
+            foreach( $market_date_time as $m ): 
+                $m = explode( '|', $m );
+                if( $m[0]  < time() ) continue;
+                $market_date = date('Y-m-d', $m[0]); 
+                if( array_key_exists($market_date, $availableDates ))
+                {
+                    $availableDates[$market_date]   = [
+                        'place'     => $market_title,
+                        'address'   => $market_address
+                    ];
+                }
+            endforeach;
+        }
 
     endwhile; endif; wp_reset_postdata();
 
