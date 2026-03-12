@@ -173,28 +173,40 @@ function market_date_time()
     global $post;
 
     $custom = get_post_custom($post->ID);
-    $market_date_time   = isset($custom['market_date_time'] ) ? unserialize($custom['market_date_time'][0]) : []; 
-    for( $i=0; $i<5; $i++ )
-    {
-        
-        $date   = isset( $market_date_time[$i] ) ? $market_date_time[$i]["'date'"] : ''; 
-        $start  = isset( $market_date_time[$i] ) ? $market_date_time[$i]["'start'"] : '';
-        $end    = isset( $market_date_time[$i] ) ? $market_date_time[$i]["'end'"] : '';
-        ?>
-            <div class="market_date_time--wrapper">
-                <label>Date:</label><input type="date" value="<?php echo $date; ?>" name="market_date_time[<?php echo $i; ?>]['date']" /><br />
-                <label>Start Time:</label><input type="time" value="<?php echo $start; ?>" name="market_date_time[<?php echo $i; ?>]['start']" /><br />
-                <label>End Time:</label><input type="time" value="<?php echo $end; ?>" name="market_date_time[<?php echo $i; ?>]['end']" /><br /><br />
-            </div>  
+    $market_date_time   = isset($custom['market_date_time'] ) ? $custom['market_date_time'][0] : '';
+    $now    = time();
+    ?>
+    <p>Enter the Market Dates and Times as<br>2025-06-30|0900|1500, for 30th June, 2025 from 9am to 3pm</p> 
+    <textarea name="market_date_time" style="height:200px;">
         <?php
-    }
+            if( !empty( $market_date_time ) )
+            {
+                $market_date_time = explode("\n", $market_date_time );
+                foreach( $market_date_time as $m )
+                {
+                    $m  = explode( '|', $m );
+                    if( $now > $m[0] ) continue;
+                    echo date( 'Y-m-d', (int) $m[0]) . '|' . $m[1] . '|' . $m[2] . "\n";
+                }
+            }
+        ?>
+    </textarea>
+    <?php
 }
 
 function save_date_time()
 {
     global $post;
     if (empty($post->ID)) return; 
-    $market_date_time = $_POST['market_date_time']; 
+    $market_date_time   = explode( "\n", $_POST['market_date_time'] ); 
+    $o                  = [];
+    foreach( $market_date_time as $m )
+    {
+        $m      = explode( '|', $m );
+        $m[0]   = strtotime( $m[0] );
+        $o[]    = join('|', $m );
+    }
+    $market_date_time = join( "\n", $o );
     update_post_meta($post->ID, 'market_date_time', $market_date_time );
 
 }
