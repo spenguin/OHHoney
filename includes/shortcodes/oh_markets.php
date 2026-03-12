@@ -40,11 +40,17 @@ function oh_markets( $atts = [], $content = null, $tag = '' )
                         <p><a href="https://maps.google.com/?q=<?php echo $address; ?>" target="_blank"><?php echo $address; ?><i class="fa-solid fa-up-right-from-square"></i></a></p>
                         <div class="markets_market--dates">
                             <?php 
-                                foreach( $market_date_time as $m ): 
-                                    if( empty($m["'date'"] ) ) break;
-                                    ?>
-                                    <p><?php echo date( 'l, M d Y', strtotime($m["'date'"]) ); ?><br><?php echo $m["'start'"] . ' - ' . $m["'end'"]; ?></p>
-                                <?php endforeach; ?>
+                                if( !empty($market_date_time) )
+                                {
+                                    $market_date_time = explode( "\n", $market_date_time );
+                                    foreach( $market_date_time as $m )
+                                    {
+                                        $m  = explode( '|', $m );
+                                        ?>
+                                        <p><?php echo date( 'l, M d Y', (int) $m[0] ); ?><br><?php echo $m[1] . ' - ' . $m[2]; ?></p>
+                                    <?php 
+                                    }
+                                } ?>
                         </div>
                     </div>
                 <?php endwhile; ?>
