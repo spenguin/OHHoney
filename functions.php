@@ -36,6 +36,7 @@ require_once CORE_INC . 'product-functions.php';
 require_once CORE_INC . 'tools.php';
 require_once CORE_INC . 'slideshow.php';
 require_once CORE_INC . 'shop-hours-settings.php';
+require_once CORE_INC . 'headerBarSettings.php';
 
 
 if( isset( $_GET['nobar'] ) )

@@ -50,7 +50,9 @@ function oh_markets( $atts = [], $content = null, $tag = '' )
                                         <p><?php echo date( 'l, M d Y', (int) $m[0] ); ?><br><?php echo $m[1] . ' - ' . $m[2]; ?></p>
                                     <?php 
                                     }
-                                } ?>
+                                } else {
+                                    echo '<p>No dates currently scheduled.</p>';
+                                }?>
                         </div>
                     </div>
                 <?php endwhile; ?>

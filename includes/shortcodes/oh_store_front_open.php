@@ -23,7 +23,7 @@ function oh_store_front_open( $atts = [], $content = null, $tag = '' )
                                 if( empty( $display_shop_hours["'o'"][$i] ) ) continue;
                                 ?>
                                 <li>
-                                    <?php echo $days[$i]; ?>: <?php echo $display_shop_hours["'o'"][$i]; ?> - <?php echo $display_shop_hours["'c'"][$i]; ?>
+                                    <?php echo $days[$i]; ?>: <?php echo date( 'ga', strtotime( $display_shop_hours["'o'"][$i] ) ); ?> - <?php echo date( 'ga', strtotime( $display_shop_hours["'c'"][$i] ) ); ?>
                                 </li>
                                 <?php
                             }
