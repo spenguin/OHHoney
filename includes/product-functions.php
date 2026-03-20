@@ -31,8 +31,7 @@ function get_products()
         $terms  = organise_terms($ID);
 
         // A hack to get the images [FIX]
-        $imageStr = get_the_post_thumbnail_url();
-        $imageUrl = substr( $imageStr, 0, -4 ) . '-324x324' . substr( $imageStr, strlen($imageStr)-4 );
+        $imageUrl = get_the_post_thumbnail_url( NULL, [324,324]);
 
 
         $o[$ID]   = [

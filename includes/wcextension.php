@@ -111,11 +111,11 @@ function get_available_collection_dates()
     $availableDates = [];
     
     // Start with Shop Hours
-    $display_shop_hours = get_option( 'display_shop_hours' ); 
+    $display_shop_hours = get_option( 'display_shop_hours' );
 
     foreach( $dates as $date )
     {   
-        $available  = empty($display_shop_hours["'c'"][date('w', strtotime($date))]) ? '' : 'In Store';
+        $available  = empty($display_shop_hours["'c'"][date('w', strtotime($date))-1]) ? '' : 'In Store';
         $availableDates[$date]  = $available;
         if( !empty($available) )
         {
@@ -174,7 +174,7 @@ function get_location_by_collection_date($date)
 function getDatesForPeriod($startDate, $period) 
 {
     $dates = [];
-    $currentDate = new DateTime($startDate); 
+    $currentDate = new DateTime($startDate . "+3 days" ); 
     $endDate = new DateTime($startDate . "+" . $period . "days"); 
 
     while ($currentDate <= $endDate) {
