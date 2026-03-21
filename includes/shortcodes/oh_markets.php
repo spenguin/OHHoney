@@ -47,7 +47,7 @@ function oh_markets( $atts = [], $content = null, $tag = '' )
                                     {
                                         $m  = explode( '|', $m );
                                         ?>
-                                        <p><?php echo date( 'l, M d Y', (int) $m[0] ); ?><br><?php echo $m[1] . ' - ' . $m[2]; ?></p>
+                                        <p><?php echo date( 'l, M d Y', (int) $m[0] ); ?><br><?php echo date( 'ga', strtotime( $m[1] ) ) . ' - ' . date( 'ga', strtotime( $m[2] ) ); ?></p>
                                     <?php 
                                     }
                                 } else {
