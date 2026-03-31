@@ -37,6 +37,7 @@ require_once CORE_INC . 'tools.php';
 require_once CORE_INC . 'slideshow.php';
 require_once CORE_INC . 'shop-hours-settings.php';
 require_once CORE_INC . 'headerBarSettings.php';
+require_once CORE_INC . 'marketFns.class.php';
 
 
 if( isset( $_GET['nobar'] ) )

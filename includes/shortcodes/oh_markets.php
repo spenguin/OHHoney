@@ -29,7 +29,9 @@ function oh_markets( $atts = [], $content = null, $tag = '' )
             <?php endif; ?>
             <div class="markets__inner max-wrapper__narrow">
                 <?php while($query->have_posts()): $query->the_post(); 
-                    $market_date_time = get_post_meta( $query->post->ID, 'market_date_time', TRUE );
+                    // $market_date_time   = get_post_meta( $query->post->ID, 'market_date_time', TRUE );
+                    $marketDateTimeArray    = marketFns::getMarketDateAndTime( $query->post->ID );
+                    if( empty( $marketDateTimeArray ) ) continue;
                     $url                = get_post_meta( $query->post->ID, 'url', TRUE );
                     $address            = get_post_meta( $query->post->ID, 'address', TRUE );
                 ?>
@@ -40,19 +42,11 @@ function oh_markets( $atts = [], $content = null, $tag = '' )
                         <p><a href="https://maps.google.com/?q=<?php echo $address; ?>" target="_blank"><?php echo $address; ?><i class="fa-solid fa-up-right-from-square"></i></a></p>
                         <div class="markets_market--dates">
                             <?php 
-                                if( !empty($market_date_time) )
-                                {
-                                    $market_date_time = explode( "\n", $market_date_time );
-                                    foreach( $market_date_time as $m )
-                                    {
-                                        $m  = explode( '|', $m );
-                                        ?>
-                                        <p><?php echo date( 'l, M d Y', (int) $m[0] ); ?><br><?php echo date( 'ga', strtotime( $m[1] ) ) . ' - ' . date( 'ga', strtotime( $m[2] ) ); ?></p>
-                                    <?php 
-                                    }
-                                } else {
-                                    echo '<p>No dates currently scheduled.</p>';
-                                }?>
+                                foreach( $marketDateTimeArray as $m )
+                                { ?>
+                                    <p><?php echo date( 'l, M d Y', (int) $m[0] ); ?><br><?php echo date( 'ga', strtotime( $m[1] ) ) . ' - ' . date( 'ga', strtotime( $m[2] ) ); ?></p>
+                                    <?php
+                                } ?>
                         </div>
                     </div>
                 <?php endwhile; ?>
