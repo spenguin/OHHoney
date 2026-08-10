@@ -121,7 +121,7 @@ function get_available_collection_dates()
         {
             $availableDates[$date]  = [
                 'place'     => $available,
-                'address'   => '97-2710 Barnet Hwy, Coquitlam BC'
+                'address'   => '4-2054 Kingsway Ave, Port Coquitlam BC'
             ];
         }
     }

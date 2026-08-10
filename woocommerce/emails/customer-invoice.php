@@ -110,7 +110,7 @@ $selectedDate 	= get_post_meta( $order->ID, 'selectedDate', TRUE );
 $location		= get_location_by_collection_date($selectedDate);
 
 ?>
-    <p>Order collection set for <?php echo $selectedDate; ?> at <?php echo $location['place']; ?> (<?php echo $location['address']; ?>)</p>
+    <p style="border: 1px solid black;padding:0.5rem;font-weight:bold">Order collection set for <?php echo $selectedDate; ?> at <?php echo $location['place']; ?> (<?php echo $location['address']; ?>)</p>
 
 <?php
 /**

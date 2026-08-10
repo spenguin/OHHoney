@@ -174,21 +174,24 @@ function market_date_time()
 
     $custom = get_post_custom($post->ID);
     $market_date_time   = isset($custom['market_date_time'] ) ? $custom['market_date_time'][0] : '';
-    $now    = time();
+    $now    = strtotime('-1 day'); //time();
     ?>
     <p>Enter the Market Dates and Times as<br>2025-06-30|0900|1500, for 30th June, 2025 from 9am to 3pm</p> 
     <textarea name="market_date_time" style="height:200px;">
         <?php
+            $o = [];
             if( !empty( $market_date_time ) )
             {
                 $market_date_time = explode("\n", $market_date_time );
                 foreach( $market_date_time as $m )
                 {
                     $m  = explode( '|', $m );
+                    if( empty( $m[1] ) ) continue;
                     if( $now > $m[0] ) continue;
-                    echo date( 'Y-m-d', (int) $m[0]) . '|' . $m[1] . '|' . $m[2] . "\n";
+                    $o[]= date( 'Y-m-d', (int) $m[0]) . '|' . $m[1] . '|' . $m[2] . "\n";
                 }
             }
+            echo trim( join('', $o ));
         ?>
     </textarea>
     <?php
