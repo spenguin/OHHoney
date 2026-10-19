@@ -13,9 +13,13 @@ function oh_products( $atts = [], $content = null, $tag = '' )
     ] );
     $terms = wp_get_object_terms( $posts_in_post_type, 'product_cat', array( 'ids' ) ); //die(var_dump($terms));
 
-    $products = get_products(); //die(var_dump($products));?>
+    $products = get_products(); //die(var_dump($products));
+    ob_start(); ?>
 
-    <div id="ProductPage"></div>
+    <div class="max-wrapper"><?php echo $content; ?></div>
+
+    <div id="ProductPage">
+    </div>
 
 
     <script>
@@ -27,4 +31,5 @@ function oh_products( $atts = [], $content = null, $tag = '' )
     <script type="text/javascript" src="<?php echo CORE_DIST; ?>productpage.js"></script>
 
     <?php
+    return ob_get_clean();
 }

@@ -1758,4 +1758,17 @@ footer .footer--secondary-nav {
   margin-right: 1rem;
 }
 
+/** Introduction styling */
+.introduction--wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.introduction__left {
+  width: 49%;
+}
+.introduction__right {
+  width: 49%;
+}
+
 /*# sourceMappingURL=style.css.map */

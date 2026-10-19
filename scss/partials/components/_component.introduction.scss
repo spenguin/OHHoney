@@ -1,0 +1,14 @@
+/** Introduction styling */
+.introduction {
+    &--wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &__left {
+        width: 49%;
+    }
+    &__right {
+        width: 49%;
+    }
+}
